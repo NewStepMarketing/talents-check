@@ -107,7 +107,7 @@
             "Füge eine E-Mail oder einen Link hinzu (Website, Linktree, Sedcard). Schreib daneben, wofür die Anfrage gedacht ist: Buchung, Kooperation, Casting.",
         },
         {
-          label: "Nur DM – ohne Hinweis, ob du Anfragen annimmst",
+          label: "Nur DM, ohne Hinweis, ob du Anfragen annimmst",
           points: 2,
           tip:
             "Schreib in der Bio: „Anfragen per Mail an …“ oder „Kooperationen: Formular im Link“. Das filtert Spam und wirkt professioneller als „schreib mir einfach“.",
@@ -138,7 +138,7 @@
             "Entscheide dich für eine Hauptnische für die nächsten 8 Wochen und poste vor allem dazu. Ein klarer Fokus hilft Algorithmus und Agenturen gleichermaßen.",
         },
         {
-          label: "Mal so, mal so – schwer einzuordnen",
+          label: "Mal so, mal so, schwer einzuordnen",
           points: 2,
           tip:
             "Wähle drei Content-Säulen (z. B. Outfits, BTS, Tipps) und halte sie im Verhältnis 70/20/10. So bleibt Abwechslung, ohne verwirrend zu wirken.",
@@ -187,8 +187,10 @@
 
   function showScreen(name) {
     Object.keys(screens).forEach(function (key) {
-      screens[key].classList.toggle("is-active", key === name);
-      screens[key].hidden = key !== name;
+      var active = key === name;
+      screens[key].classList.toggle("is-active", active);
+      screens[key].hidden = !active;
+      screens[key].setAttribute("aria-hidden", active ? "false" : "true");
     });
     if (name === "question") {
       renderQuestion();
