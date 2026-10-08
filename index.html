@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil-Check für Talents · NewStep Talents</title>
+    <meta
+      name="description"
+      content="Kostenloser Instagram-Profil-Check für Talents und Models. Fünf kurze Fragen, Ergebnis in etwa einer Minute. Von NewStep Talents."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="NewStep Talents" />
+    <meta
+      property="og:title"
+      content="Profil-Check für Talents · NewStep Talents"
+    />
+    <meta
+      property="og:description"
+      content="Prüfe dein Instagram-Profil in einer Minute. Kostenlos, ohne Anmeldung."
+    />
+    <meta property="og:url" content="https://check.newstep-talents.com/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="site-header">
+        <a href="https://newstep-talents.com/" aria-label="NewStep Talents Startseite">
+          <img
+            src="/assets/logo.png"
+            width="2701"
+            height="1000"
+            alt="NewStep Talents"
+          />
+        </a>
+      </header>
+
+      <main id="main">
+        <section
+          id="screen-intro"
+          class="screen is-active"
+          aria-labelledby="intro-heading"
+        >
+          <div class="brand-card">
+            <p class="brand-eyebrow">Kostenlos</p>
+            <h1 id="intro-heading">Profil-Check für Talents</h1>
+            <p class="lead">
+              Wir schauen mit dir auf dein Instagram-Profil: Bio, Bilder, Kontakt
+              und Richtung. Fünf kurze Fragen, ehrliches Feedback. Das dauert etwa
+              eine Minute.
+            </p>
+            <p class="meta-line">Kein Login. Keine Daten werden gespeichert.</p>
+            <div class="nav-row" style="margin-top: 1.25rem">
+              <button type="button" class="btn btn-primary btn-block" id="btn-start">
+                Check starten
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="screen-question"
+          class="screen"
+          hidden
+          aria-live="polite"
+        >
+          <div class="progress-wrap" aria-hidden="false">
+            <span class="progress-label" id="progress-label"></span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="brand-card">
+            <p class="brand-eyebrow" id="question-title"></p>
+            <h2 id="question-prompt" class="question-text"></h2>
+            <div
+              id="options"
+              class="options"
+              role="radiogroup"
+              aria-labelledby="question-prompt"
+            ></div>
+            <div class="nav-row">
+              <button type="button" class="btn btn-secondary" id="btn-back" hidden>
+                Zurück
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btn-next"
+                disabled
+                style="flex: 1"
+              >
+                Weiter
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-result" class="screen" hidden aria-labelledby="result-heading">
+          <div class="brand-card">
+            <p class="brand-eyebrow">Dein Ergebnis</p>
+            <h2 id="result-heading" class="visually-hidden">Profil-Score</h2>
+            <div class="score-ring" aria-label="Profil-Score">
+              <span class="score-value" id="score-value">0</span>
+              <span class="score-of">von 100 Punkten</span>
+            </div>
+            <p class="verdict" id="verdict"></p>
+
+            <p class="tips-title">Deine nächsten 3 Schritte</p>
+            <ol class="tips-list" id="tips-list"></ol>
+
+            <div class="cta-stack">
+              <a
+                class="btn btn-primary btn-block"
+                href="https://newstep-talents.com/pricing"
+                rel="noopener"
+              >
+                Pakete &amp; Preise ansehen
+              </a>
+              <a
+                class="btn btn-secondary btn-block"
+                href="https://newstep-talents.com/checkliste"
+                rel="noopener"
+              >
+                Kostenlose Checkliste holen
+              </a>
+              <button type="button" class="btn btn-secondary btn-block" id="btn-restart">
+                Check wiederholen
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <nav aria-label="Rechtliches">
+          <a href="https://newstep-talents.com/legal-notice" rel="noopener">Impressum</a>
+          <a href="https://newstep-talents.com/privacy-policy" rel="noopener">Datenschutz</a>
+        </nav>
+        <p>© NewStep Talents · Profil-Check für Talents</p>
+      </footer>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
